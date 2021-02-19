@@ -1,5 +1,5 @@
 .txt {
-    background-color: red;
+    color: red;
 }
 
 .maClasse2 {
@@ -8,4 +8,13 @@
 
 #monPremierPar {
     font-size: 25px;
+}
+
+.box {
+    width: 250px;
+    height: 250px;
+    /*background-color: hsl(265, 33%, 50%); Methode with "hsl()"*/
+    /*background-color: rgba(108, 32, 55, .5);   Methode with "rgba()" */
+    background-color: #cd5c5c; /*Methode hexadecimal with prefix "#" and color code "cd5c5c"*/
+
 }
