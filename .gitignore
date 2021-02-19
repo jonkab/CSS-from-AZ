@@ -25,6 +25,7 @@ Thumbs.db
 # IDE FILES
 *.sublime-*
 *.tmproj
+.idea/
 
 # NODE
 .node_modules
