@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.card {
+    background-color: grey;
+    margin: 200px auto 0 auto;
+    max-width: 400px;
+}
+
+.card_img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card_content {
+    padding: 10px 5px;
+    color: white;
+}
+
+.card_title {
+    margin-top: 0;
+}
