@@ -14,8 +14,16 @@ body {
 }
 
 .box1 {
+    float: left;
     background: crimson;
 }
 .box2 {
+    float: right;
     background: turquoise;
+}
+
+.container::after {
+    content: "";
+    display: block;
+    clear: both;
 }
