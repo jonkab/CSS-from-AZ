@@ -1,6 +1,68 @@
 body {
     margin: 0;
     padding: 0;
-    background: #333;
+    background: #484646;
     height: 100vh;
+}
+
+/* Class container parent pour chaque item */
+.container {
+    background: beige;
+    height: 200px;
+    width: 100%;
+    display: flex;
+
+    /* Agit sur l'axe Y (horizontale)
+    de gauche à droite */
+    justify-content: center;
+
+    /* Agit sur l'axe X (verticale)
+    de haut en bas */
+    align-items: center;
+    /* Pour que chaque item prennent toute la hauteur
+     utiliser "stretch" et NE PAS METTRE
+     de propriété "height" sur chaque item */
+}
+
+/* Class items enfant pour tous les items enfants
+afin d'appliquer les mêmes styles pours tous */
+.items {
+    /* Ici SUPPRIMER la "height" si l'on veut
+    utiliser "align-items: stretch;" sur le
+    container parent */
+    height: 100px;
+    width: 100px;
+}
+
+/* Class item1 ... pour cibler chaque item enfants
+séparément, pour pouvoir utiliser des propiétés flex
+spécifiques aux enfant. Par exemple pour changer leur ordre
+avec "order: 1" ou encore pour changer leur position
+sur l'axe X (verticale) avec "align-self: flex-end" */
+.item1 {
+    background: indianred;
+}
+
+.item2 {
+    background: blue;
+    align-self: flex-end;
+}
+
+.item3 {
+    background: blueviolet;
+    align-self: flex-start;
+}
+
+.item4 {
+    background: cornflowerblue;
+}
+
+.item5 {
+    background: yellowgreen;
+    /* POUR RAPPEL : pour utiliser "align-items: stretch;"
+     l'item ne doit pas avoir de hauteur ou la "height "
+     doit être override par "height: inherit" pour que
+     l'enfant hérite de la hauteur du container parent */
+    height: inherit;
+    align-items: stretch;
 }
