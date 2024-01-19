@@ -3,12 +3,33 @@ body {
 }
 
 /* Une règle CSS : */
-
+/* Sélecteur */
+h1 { /* Déclaration = le sélecteur + propriété */
+  /* propriété : valeur */
+  color: blue;
+  font-size: 45px;
+  background-color: #000;
+}
 
 
 /* Différents sélecteurs sont disponibles */
+.title {
+  background-color: darkslategray;
+  color: cornsilk;
+}
 
+#title-1 {
+  background-color: crimson;
+}
 
+.title.first-title {
+  padding: 20px;
+}
+
+.container p {
+  font-size: 30px;
+  color: green;
+}
 
 /* On évite les sélections trop longues */
 
