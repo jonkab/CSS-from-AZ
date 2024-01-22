@@ -31,23 +31,64 @@ h1 { /* Déclaration = le sélecteur + propriété */
   color: green;
 }
 
-/* On évite les sélections trop longues */
+/* On évite les sélections(sélecteur) trop longues voir inutile */
+html body .container ul li {
+  /*
+    En effet, tant dans un soucis de maintenabilité que de performance
+    avoir des sélecteurs CSS trop long rend plus difficile la lecture
+    du code mais aussi demande plus de calcul au navigateur pour parcourir
+    l'arborescence de la page (DOM) afin de la lier au style (CSSOM).
+
+    A savoir aussi que plus une règle CSS a de sélecteur plus ça augmente
+    sa dépendance avec tous ses sélecteurs, ce qui peut dans certain cas
+    s'avérer contraignant.
+
+    Un règle CSS peut avoir plusieurs sélecteur à condition que ce soit justifié.
+  */
+  font-size: 30px;
+}
 
 
+/* On privilégiera un sélecteur court avec une class CSS autant que faire ce peut */
+.list-item {
+  /*
+    Avec une class CSS qui a un nom sémantique, on comprend tout de suite
+    quel élément et concerné mais aussi l'élément stylisé est complétement
+    indépendant des autres éléments parents
+  */
+  font-size: 30px;
+}
 
-/* On donne une classe au parent ou à l'enfant pour faciliter la sélection */
+
+/* On donne une classe au parent pour faciliter la sélection */
+.list li {
+  font-size: 30px;
+}
+
+/* ou à l'enfant si on préfère avoir une class sur l'enfant */
+.list-item {
+  font-size: 30px;
+}
 
 
-/* ou */
+/* Le sécteur astérisque * dit universel */
+/* Le sélecteur universel qui n'a pas une grande spécificité "*" sélectionne tout */
+* {
+  /* N'ayant pas une grande spécificité, on pourra donc le surcharger facilement */
+  background-color: #000;
+}
 
 
-/* Le sélecteur universel "*" sélectionne tout */
-
-
-
-/* On l'utilise souvent pour reset */
-
+/* On l'utilise souvent pour reset le style par défaut fournit par le navigateur(user-agent) */
+* {
+  /* On constate que tout élément ayant des margin et padding par défaut sont remis à 0 */
+  margin: 0;
+  padding: 0;
+}
 
 
 /* On peut aussi l'utiliser dans un élément */
-
+.container * {
+  /* Ceci permet de cibler tous les éléments enfants(internes) d'un élément parent */
+  background-color: pink;
+}
