@@ -1,3 +1,133 @@
 body {
-  background: #333;
+  background: #bbb8b8;
+}
+
+.wrap {
+  display: flex;
+}
+
+.box {
+  width: 250px;
+  height: 250px;
+  /*
+      Les propriétés des couleurs et/ou fonctions CSS qui en génèrent
+  */
+  /* Les "named color" */
+  background-color: salmon;/* Usage des "named color" pour l'exemple
+    mais peu/pas utilisé dans les projets car les couleurs sont fournis
+    par les designer via les maquettes au format hexadécimal ou rgb et permet
+    donc une palette de couleur plus large que celle déjà fournis par
+    les "named color"
+  */
+
+  /* Les couleurs : red green blue (RGB)*/
+  background-color: rgb(250, 128, 114);/* Palette de couleur conçu via
+    les 3 couleurs primaires grâce à la fonction CSS rgb() qui prend
+    les 3 couleurs en argument.
+  */
+
+  /* Les couleurs : red green blue alpha (RGBa) | le "a" de Alpha pour l'opacité */
+  background-color: rgba(250, 128, 114, .5);/* La fonction CSS rgba()
+    équivalent à rgb() mais prend un 4é argument en plus pour définir une opacité
+  */
+
+  /* Les couleurs : Hexadecimal | se définit entre les lettres [a-f] et les chiffres [0-9] en 3 paires de valeur */
+  background-color: #fa8072;/* Préfixé de # puis du code hexadecimal */
+  background-color: #fa8072e6;/* Possible aussi d'ajouter une opacité */
+  /* Source (article très intéressant) qui en parle : https://www.digitalocean.com/community/tutorials/css-hex-code-colors-alpha-values */
+}
+
+/*
+    En d’autres termes, un chiffre à un seul chiffre n’a que 10 valeurs
+    possibles (0 à 9), et après cela, il doit passer à deux chiffres (10).
+
+    Les valeurs hexadécimales sont en base 16 au lieu de base 10 :
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+
+    Il utilise les lettres A, B, C, D, E et F pour représenter les valeurs supplémentaires.
+
+    Par exemple, ce sont toutes des valeurs hexadécimales valides :
+    00, 01, 99, 9D, 1D, CC, E4, F5
+
+    Les codes hexadécimaux CSS doivent commencer par un « signe dièse » (#) (également appelé signe dièse ou symbole dièse).
+    Ensuite, six chiffres de valeurs hexadécimales.
+    Chaque paire de deux chiffres représente le rouge, le vert et le bleu.
+    Le motif ressemble à #RRGGBB(où le rouge est R, le vert est G, et le bleu est B).
+
+    Les couleurs sont représentées par une combinaison de valeurs rouge, verte et bleue.
+    La valeur la plus basse (00) sera la version la plus sombre de la couleur (la plus proche du noir)
+    et la valeur la plus élevée (FF) sera la version la plus claire de la couleur (la plus proche du blanc).
+*/
+
+.noir-unie {
+  /* Régler les trois paires sur la valeur la plus basse (00) produira une couleur noire unie : */
+  background-color: #000000;
+}
+
+.blanc-unie {
+  /* Régler les trois paires sur la valeur la plus basse (FF) produira une couleur noire unie : */
+  background-color: #FFFFFF;
+}
+
+.texte-rouge {
+  /*
+      Supposons que l'on veut que la couleur du texte du titre soit rouge vif.
+      On peut définir la RR valeur rouge () sur la valeur la plus élevée possible (FF).
+      Puisque nous ne voulons ni de vert ni de bleu, nous pouvons définir les valeurs
+      vert (GG) et bleu (BB) chacune sur la valeur la plus basse possible (00).
+  */
+  color: #FF0000;
+}
+
+.texte-rouge--alpha {
+  /*
+      Ajout d'une valeur alpha aux codes hexadécimaux CSS
+
+      L'utilisation d'une valeur alpha pour mettre à jour la transparence d'une couleur
+      modifiera le format du code hexadécimal de #RRGGBB à #RRGGBBAA (où alpha est A).
+      Les six premières valeurs (les rouges, vertes et bleues) restent les mêmes.
+
+      La AA valeur de #RRGGBBAA peut aller de la valeur la plus basse possible (00)
+      à la valeur la plus élevée possible (FF).
+      Diminuer la valeur rendra la visibilité de plus en plus faible jusqu'à ce qu'elle
+      devienne transparente.
+      Augmenter la valeur rendra la visibilité de plus en plus opaque.
+  */
+  color: #FF000080;
+}
+
+
+/*
+    Les couleurs : HSL pour [H]ue(teinte) [S]aturation [L]ightness(lumière)
+    Source MDN qui en parle : https://developer.mozilla.org/fr/docs/Web/CSS/color_value/hsl
+
+    Avec la fonction hsl() exprime une couleur sRGB selon ses composantes de
+    teinte (hue en anglais), saturation, et luminosité.
+    Une composante alpha optionnelle en 4é argument séparé par un "/" représente l'opacité de la couleur.
+*/
+.code-couleur-hsl-salmon {
+  background-color: hsl(6 93% 71%);
+}
+
+.code-couleur-hsl-salmon--alpha {
+  background-color: hsl(6 93% 71% / 80%);
+}
+
+
+/* Valeur hexadecimal écrite en raccourci avec seulement 3 chiffres */
+.title {
+  color: #000;
+  background-color: #fff;
+}
+
+/* La couleur dans la propriété box-shadow souvent utilisé avec rgba() pour gérer l'opacité
+    mais accepte aussi un code hexadecimal
+*/
+.title--shadow {
+  box-shadow: 0 5px 5px rgba(360, 360, 360, .9);
+}
+
+/* La couleur dans la propriété border */
+.border-blue {
+  border: 2px solid #085ff1;
 }
